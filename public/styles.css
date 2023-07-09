@@ -1,0 +1,462 @@
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+}
+
+
+html {
+    scroll-behavior: smooth;
+    background-color: #1A202C;
+}
+
+@media (min-width: 375px) and (max-width: 800px) {
+    body {
+        flex-direction: column;
+    }
+}
+
+/* Taskbar.jsx */
+
+.taskbar {
+    margin-top: 30px;
+    display: flex;
+    height: 60px;
+}
+
+.taskbar-box {
+    display: flex;
+    padding-left: 10px;
+}
+
+.taskbar-text {
+    padding-left: 10px;
+    display: flex;
+    font-size: large;
+    color: white;
+}
+
+@media (min-width: 300px) and (max-width: 1250px) {
+
+    .taskbar-box,
+    .taskbar,
+    .taskbar-text {
+        margin-top: 10px;
+        justify-content: center;
+        align-items: center;
+        word-wrap: break-word;
+        width: auto;
+        height: auto;
+        font-size: small;
+        flex-direction: column;
+    }
+}
+
+/* Profile.jsx */
+
+.profile-container {
+    display: flex;
+    margin-top: 40px;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 100%;
+    border-radius: 10px;
+    background: linear-gradient(to right, #21232a, #4ea4be);
+    box-shadow: 0 0 15px #1a202c;
+}
+
+.profile-image {
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    margin: 80px 0 0 100px;
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: easeOutAnimation 2s;
+}
+
+@media (min-width: 300px) and (max-width: 1250px) {
+
+    .profile-container,
+    .profile {
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        word-wrap: break-word;
+        width: 100%;
+        height: 150px;
+        flex-direction: column;
+        margin-top: 30px;
+    }
+
+    .profile-image {
+        position: absolute;
+        height: 160px;
+        width: 160px;
+        padding: 2px;
+        margin-left: 20px;
+        margin-top: 0px;
+    }
+}
+
+.profile-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: max-content;
+    width: max-content;
+    overflow: hidden;
+}
+
+.profile-text-name,
+.profile-text-profession {
+    color: white;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+}
+
+.profile-text-name {
+    animation: bottomToUpAnimation 1s;
+}
+
+.profile-text-profession {
+    animation: bottomToUpAnimation 1s;
+}
+
+.profile-text-name {
+    position: relative;
+    font-size: 50px;
+    margin-top: 5px;
+    margin-left: 180px;
+}
+
+.name {
+    font-size: 50px;
+    margin-bottom: 10px;
+    font-weight: bolder;
+}
+
+.profile-text-profession {
+    position: relative;
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-left: 180px;
+}
+
+.profession {
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-weight: bolder;
+}
+
+@media (min-width: 300px) and (max-width: 1250px) {
+
+    .profile-text-name {
+        font-size: 20px;
+        text-align: center;
+        margin-left: 200px;
+        margin-right: auto;
+    }
+
+    .profile-text-profession {
+        font-size: 15px;
+        text-align: center;
+        margin-left: 200px;
+        margin-right: auto;
+    }
+
+    .profession,
+    .name {
+        font-size: 15px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+}
+
+@keyframes easeOutAnimation {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bottomToUpAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Socials.jsx */
+
+.socials-container {
+    position: absolute;
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    right: 0;
+    top: 0;
+    margin-top: 130px;
+    margin-right: 100px;
+    opacity: 0;
+    animation: fadeInAnimation 2s forwards;
+}
+
+@media (min-width: 300px) and (max-width: 1250px) {
+    .socials-container {
+        flex-direction: column;
+        align-items: right;
+        justify-content: right;
+        right: 0;
+        top: 0;
+        margin-top: -40px;
+        margin-right: 10px;
+        transform: scale(0.5);
+    }
+
+    @media (max-width: 550px) {
+        .socials-container {
+            display: none;
+        }
+    }
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* AboutMe.jsx */
+
+.aboutme-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.aboutme {
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0px 10px 25px 0px white;
+    animation-delay: 2s;
+    animation: slideIn 1s ease-out forwards;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0 30px 2px white;
+    background: linear-gradient(to bottom, #313B48, #1A202C);
+}
+
+@media (min-width: 300px) and (max-width: 1250px) {
+    .aboutme-container {
+        flex-direction: column;
+        margin-top: 300px;
+        font-size: xx-small;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-25%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+/* Capabilities.jsx */
+
+.capabilities-container {
+    margin-top: 100px;
+}
+
+.certificate-skill-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    overflow-x: hidden;
+}
+
+.certificates-container {
+    height: 500px;
+    width: 500px;
+    border: 2px solid white;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    margin-right: 50px;
+}
+
+.skills-container {
+    height: 500px;
+    width: 500px;
+    border: 2px solid white;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    margin-left: 50px;
+}
+
+@media (min-width: 300px) and (max-width: 1250px) {
+    .capabilities-container {
+        margin-top: 200px;
+    }
+
+    .certificate-skill-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .skills-container {
+        height: min-content;
+        width: fit-content;
+        border-radius: 30px;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+
+    .certificates-container {
+        height: auto;
+        width: auto;
+        border-radius: 30px;
+        margin: 0 auto;
+        margin-top: 30px;
+        font-size: smaller;
+    }
+}
+
+/* Skills.jsx */
+
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.certificates {
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+}
+
+
+/* Projects.jsx */
+
+.projects-container {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.repos {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Experience.jsx */
+
+.experience-container {
+    margin-top: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 200px;
+}
+
+
+.company-info {
+    color: white;
+    border: 2px solid white;
+    margin-top: 50px;
+    height: 400px;
+    width: 400px;
+    border-radius: 30px;
+}
+
+.companyinfo-box-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.company-box {
+    margin-top: 50px;
+}
+
+.cv-button {
+    display: flex;
+    margin-bottom: 10%;
+    margin-left: 45%;
+}
+
+@media (min-width: 300) and (max-width: 1250) {
+
+    .experience-container,
+    .company-info,
+    .company-box,
+    .companyinfo-box-container {
+        flex-direction: column;
+        margin-top: 300px;
+        width: fit-content;
+        height: fit-content;
+        overflow-x: hidden;
+    }
+
+    @media screen and (min-width: 300px) and (max-width: 1250px) {
+        .cv-button {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+    }
+ 
+}
